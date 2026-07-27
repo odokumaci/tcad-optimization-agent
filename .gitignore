@@ -1,0 +1,32 @@
+.env
+.env.*
+!.env.example
+
+# Python environments and caches
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Generated TCAD, dataset, and agent outputs
+dataset/
+output/
+verification/
+agent_runs/
+papers/
+Resume_Omer_Dokumaci_us_semi.docx
+*.log
+
+# Coverage and build artifacts
+.coverage
+htmlcov/
+build/
+dist/
+*.egg-info/
+
+# Operating-system files
+.DS_Store
+Thumbs.db

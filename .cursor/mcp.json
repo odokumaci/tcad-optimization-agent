@@ -1,0 +1,14 @@
+{
+  "mcpServers": {
+    "tcad": {
+      "type": "stdio",
+      "command": "${workspaceFolder}/.venv/Scripts/python.exe",
+      "args": [
+        "${workspaceFolder}/tcad_mcp_server.py"
+      ],
+      "env": {
+        "SURROGATE_API_URL": "http://127.0.0.1:8000"
+      }
+    }
+  }
+}

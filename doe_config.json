@@ -1,0 +1,33 @@
+{
+  "name": "mosfet_50nm_pilot",
+  "output_directory": "dataset/pilot",
+  "base_parameters": {
+    "device_width_um": 1.0,
+    "gate_thickness_nm": 100.0,
+    "device_depth_um": 1.0,
+    "junction_depth_nm": 30.0,
+    "bulk_doping_cm3": -1e16,
+    "body_doping_cm3": -1e19,
+    "source_doping_cm3": 1e20,
+    "drain_doping_cm3": 1e20,
+    "gate_doping_cm3": 1e20,
+    "halo_depth_nm": 30.0,
+    "halo_offset_nm": 10.0,
+    "halo_lateral_sigma_nm": 15.0,
+    "halo_vertical_sigma_nm": 10.0,
+    "mobility_scale": 0.1,
+    "temperature_k": 300.0
+  },
+  "parameter_grid": {
+    "gate_length_nm": [45.0, 50.0, 55.0],
+    "oxide_thickness_nm": [1.0, 1.2],
+    "halo_peak_doping_cm3": [2e19, 3e19]
+  },
+  "bias_sweep": {
+    "gate_start_v": 0.0,
+    "gate_stop_v": 1.2,
+    "gate_step_v": 0.1,
+    "drain_voltages_v": [0.05, 1.2],
+    "bias_step_v": 0.1
+  }
+}

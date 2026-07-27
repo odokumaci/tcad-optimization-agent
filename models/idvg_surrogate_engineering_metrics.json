@@ -1,0 +1,46 @@
+{
+  "held_out_devices": 39,
+  "metric_statistics": {
+    "threshold_voltage_v": {
+      "mae": 0.00638618503684783,
+      "rmse": 0.007078999412459229,
+      "r2": 0.9849605054645739
+    },
+    "ion_ua_per_um": {
+      "mae": 6.393631562713515,
+      "rmse": 7.832470704698469,
+      "r2": 0.9979020527454026
+    },
+    "ioff_ua_per_um": {
+      "mae": 0.0002537925460644133,
+      "rmse": 0.00046700864230360514,
+      "r2": 0.9996480609516898
+    },
+    "log10_ioff_ua_per_um": {
+      "mae": 0.012169309317368517,
+      "rmse": 0.014968207383639277,
+      "r2": 0.9995642885565569
+    },
+    "subthreshold_slope_mv_per_dec": {
+      "mae": 0.42709444789484213,
+      "rmse": 0.48658220873430474,
+      "r2": 0.9566104377697483
+    },
+    "dibl_mv_per_v": {
+      "mae": 2.5219496990704693,
+      "rmse": 3.025724270739132,
+      "r2": 0.9014236861578011
+    }
+  },
+  "runtime_benchmark": {
+    "inference_device": "cpu",
+    "curve_points": 26,
+    "warm_inference_seconds": 8.013465002295562e-05,
+    "model_load_and_first_inference_seconds": 0.0024186499940697104,
+    "process_cold_start_seconds": 2.190997299971059,
+    "mean_tcad_seconds_per_two_curve_simulation": 39.43479592307136,
+    "warm_inference_speedup": 492106.67185511824,
+    "model_load_speedup": 16304.465722515273,
+    "process_cold_start_speedup": 17.998559799043232
+  }
+}

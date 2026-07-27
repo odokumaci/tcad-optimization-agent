@@ -1,0 +1,51 @@
+name: Tests
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: tests-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+          cache-dependency-path: requirements-ci.txt
+
+      - name: Install CPU PyTorch
+        run: >-
+          python -m pip install
+          torch==2.13.0
+          --index-url https://download.pytorch.org/whl/cpu
+
+      - name: Install test dependencies
+        run: python -m pip install -r requirements-ci.txt
+
+      - name: Check Python syntax
+        run: >-
+          python -m py_compile
+          train_idvg_surrogate.py
+          surrogate_inference.py
+          surrogate_api.py
+          design_optimizer.py
+          tcad_mcp_server.py
+          design_agent.py
+
+      - name: Run API and agent tests
+        run: python -m pytest test_surrogate_api.py test_design_agent.py -q
